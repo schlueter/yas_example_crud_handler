@@ -16,7 +16,7 @@ class ExampleCludHandler(YasHandler, YamlConfiguration):
 
     def test(self, data):
         log.debug(f"Testing {data['yas_hash']} against {self.__class__}")
-        self.current_match = self.regexp.match(data.get('text')
+        self.current_match = self.regexp.match(data.get('text'))
 
 
 class ExampleCreateHandler(ExampleCludHandler):
