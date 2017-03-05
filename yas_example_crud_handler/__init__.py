@@ -4,10 +4,10 @@ from yas import YasHandler
 from yas_example_crud_handler.yaml_file_config import YamlConfiguration
 
 
-class ExampleCludHandler(YasHandler, YamlConfiguration):
+class ExampleCludHandler(YasHandler):
 
     def __init__(self, regexp_string, log=print):
-        super(YasHandler).__init__()
+        super().__init__()
         self.regexp = re.compile(regexp_string)
         self.log('INFO', f"{self.__class__} initialized and matching {regexp_string}!")
 
