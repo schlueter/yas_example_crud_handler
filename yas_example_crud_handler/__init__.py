@@ -7,13 +7,14 @@ from yas_example_crud_handler.yaml_file_config import YamlConfiguration
 class ExampleCludHandler(YasHandler):
 
     def __init__(self, regexp_string, log=print):
-        super().__init__()
+        super().__init__(log=log)
         self.regexp = re.compile(regexp_string)
         self.log('INFO', f"{self.__class__} initialized and matching {regexp_string}!")
 
     def test(self, data):
         self.log('INFO', f"Testing {data['yas_hash']} against {self.__class__}")
         self.current_match = self.regexp.match(data.get('text'))
+        return self.current_match
 
 
 class ExampleCreateHandler(ExampleCludHandler):
