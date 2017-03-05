@@ -12,7 +12,7 @@ class ExampleCludHandler(YasHandler):
         self.log('INFO', f"{self.__class__} initialized and matching {regexp_string}!")
 
     def test(self, data):
-        self.current_match = self.regexp.match(data.get('text'))
+        self.current_match = self.regexp.search(data.get('text'))
         return self.current_match
 
 
