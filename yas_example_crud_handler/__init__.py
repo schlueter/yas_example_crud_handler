@@ -2,8 +2,7 @@ import re
 
 from yas import YasHandler
 from yas_example_crud_handler.yaml_file_config import YamlConfiguration
-from yas_example_crud_handler.logging import Logger
-
+from yas_example_crud_handler.logging import logger
 
 
 class ExampleCludHandler(YasHandler, YamlConfiguration):
@@ -11,7 +10,6 @@ class ExampleCludHandler(YasHandler, YamlConfiguration):
     def __init__(self, regexp_string):
         super(YasHandler).__init__()
         self.regexp = re.compile(regexp_string)
-        logger = Logger(self.log_level)
         log.debug(f"{self.__class__} initialized and matching {regexp_string}!")
 
     def test(self, data):
