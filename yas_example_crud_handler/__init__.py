@@ -26,6 +26,6 @@ class ExampleCreateHandler(ExampleCludHandler):
         match_groups = self.current_match.groups()
         self.__create(*match_groups, reply=reply)
 
-    def __create(self, thing_to_create):
+    def __create(self, thing_to_create, reply=None):
         reply(f'Creating {thing_to_create}')
         log('INFO', f"Created {thing_to_create}")
