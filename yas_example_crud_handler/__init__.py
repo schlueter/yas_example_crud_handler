@@ -1,6 +1,6 @@
 import re
 
-from yas_example_crud_handler import YasHandler
+from yas import YasHandler
 from yas_example_crud_handler.yaml_file_config import YamlConfiguration
 from yas_example_crud_handler.logging import Logger
 
