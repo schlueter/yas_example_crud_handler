@@ -1,0 +1,9 @@
+*.pyc
+/.eggs/
+/build/
+AUTHORS
+ChangeLog
+Facade.egg-info/
+build/
+yas.env
+/Yas.egg-info/
