@@ -28,4 +28,4 @@ class ExampleCreateHandler(ExampleCludHandler):
 
     def __create(self, thing_to_create, reply=None):
         reply(f'Creating {thing_to_create}')
-        log('INFO', f"Created {thing_to_create}")
+        self.log('INFO', f"Created {thing_to_create}")
