@@ -10,10 +10,10 @@ class ExampleCludHandler(YasHandler, YamlConfiguration):
     def __init__(self, regexp_string):
         super(YasHandler).__init__()
         self.regexp = re.compile(regexp_string)
-        log.debug(f"{self.__class__} initialized and matching {regexp_string}!")
+        logger.log.debug(f"{self.__class__} initialized and matching {regexp_string}!")
 
     def test(self, data):
-        log.debug(f"Testing {data['yas_hash']} against {self.__class__}")
+        logger.log.debug(f"Testing {data['yas_hash']} against {self.__class__}")
         self.current_match = self.regexp.match(data.get('text'))
 
 
@@ -23,10 +23,10 @@ class ExampleCreateHandler(ExampleCludHandler):
         super().__init__('(?:create)\ ([-\w]+)')
 
     def handle(self, data, reply):
-        log.info(f"Handling {data['yas_hash']} with {self.__class__}")
+        logger.log.info(f"Handling {data['yas_hash']} with {self.__class__}")
         match_groups = self.current_match.groups()
         self.__create(*match_groups, reply=reply)
 
     def __create(self, thing_to_create):
         reply(f'Creating {thing_to_create}')
-        log.info(f"Created {thing_to_create}")
+        logger.log.info(f"Created {thing_to_create}")
