@@ -12,7 +12,6 @@ class ExampleCludHandler(YasHandler):
         self.log('INFO', f"{self.__class__} initialized and matching {regexp_string}!")
 
     def test(self, data):
-        self.log('INFO', f"Testing {data['yas_hash']} against {self.__class__}")
         self.current_match = self.regexp.match(data.get('text'))
         return self.current_match
 
@@ -23,7 +22,6 @@ class ExampleCreateHandler(ExampleCludHandler):
         super().__init__('(?:create)\ ([-\w]+)', log=log)
 
     def handle(self, data, reply):
-        self.log('INFO', f"Handling {data['yas_hash']} with {self.__class__}")
         match_groups = self.current_match.groups()
         self.__create(*match_groups, reply=reply)
 
