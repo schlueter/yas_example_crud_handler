@@ -1,10 +1,10 @@
 import re
 
 from yas import YasHandler
-from yas_example_crud_handler.yaml_file_config import YamlConfiguration
+from yas_example_handlers.yaml_file_config import YamlConfiguration
 
 
-class ExampleCludHandler(YasHandler):
+class ExampleRegexHandler(YasHandler):
 
     def __init__(self, regexp_string, log=print):
         super().__init__(log=log)
@@ -16,7 +16,7 @@ class ExampleCludHandler(YasHandler):
         return self.current_match
 
 
-class ExampleCreateHandler(ExampleCludHandler):
+class ExampleCreateHandler(ExampleRegexHandler):
 
     def __init__(self, log=print):
         super().__init__('(?:create)\ ([-\w]+)', log=log)
