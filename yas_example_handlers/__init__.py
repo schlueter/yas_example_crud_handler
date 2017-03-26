@@ -19,7 +19,7 @@ class ExampleRegexHandler(YasHandler):
 class ExampleCreateHandler(ExampleRegexHandler):
 
     def __init__(self, bot_name, api_call, log=print):
-        super().__init__('(?:create)\ ([-\w]+)', log=log)
+        super().__init__('(?:create)\ ([-\w]+)', bot_name, api_call, log=log)
 
     def handle(self, data, reply):
         match_groups = self.current_match.groups()
