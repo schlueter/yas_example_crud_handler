@@ -1,6 +1,6 @@
 *.pyc
 /.eggs/
 /build/
-/Yas_Example_CRUD_Handler.egg-info/
+YasExampleHandlers.egg-info/
 AUTHORS
 ChangeLog

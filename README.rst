@@ -1,7 +1,7 @@
-Yas example crud handler
+Yas example handlers
 ------------------------
-Just an example
-+++++++++++++++
-This is a full feature example of a handler for Yas_
+Just some examples
+++++++++++++++++++
+This aims to be a set of full featured handlers for Yas_.
 
 .. _Yas: https://github.com/schlueter/yas
