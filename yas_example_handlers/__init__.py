@@ -1,5 +1,3 @@
-import re
-
 from yas import RegexHandler
 from yas_example_handlers.yaml_file_config import YamlConfiguration
 
