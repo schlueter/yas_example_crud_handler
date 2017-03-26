@@ -6,8 +6,8 @@ from yas_example_handlers.yaml_file_config import YamlConfiguration
 
 class ExampleRegexHandler(YasHandler):
 
-    def __init__(self, regexp_string, log=print):
-        super().__init__(log=log)
+    def __init__(self, regexp_string, bot_name, api_call, log=print):
+        super().__init__(bot_name, api_call, log=log)
         self.regexp = re.compile(regexp_string)
         self.log('INFO', f"{self.__class__} initialized and matching {regexp_string}!")
 
@@ -18,7 +18,7 @@ class ExampleRegexHandler(YasHandler):
 
 class ExampleCreateHandler(ExampleRegexHandler):
 
-    def __init__(self, log=print):
+    def __init__(self, bot_name, api_call, log=print):
         super().__init__('(?:create)\ ([-\w]+)', log=log)
 
     def handle(self, data, reply):
